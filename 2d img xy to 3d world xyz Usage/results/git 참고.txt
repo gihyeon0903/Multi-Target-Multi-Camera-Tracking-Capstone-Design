@@ -1,0 +1,32 @@
+git init
+git config --global user.name "남기현"
+git config --global user.email "ygw0903@ajou.ac.kr"
+git config --global init.defaultbranch main
+
+
+git remote add origin https://lab.hanium.or.kr/23_HF081/23_HF081.git
+git remote -v
+git add .
+
+git commit -m "via v1"
+git pull origin "branch명"
+git push origin "branch명"
+
+git branch -d "branch명" -> local에서만 삭제
+git push origin --delete test  -> origin에서도 삭제
+
+git fetch oigin -> 원격 저장소에서 모든 버전 update해서 받아옴
+checkout을 해야 local에 반영
+
+origin -> 원격저장소
+master -> branch
+
+강제로 덮어 쓰기(pull)
+git fetch --all
+git reset --hard origin/master
+git pull origin master
+
+오류
+warning: in the working copy of '파일명', LF will be replaced by CRLF the next time Git touches it
+줄바꿈을 인식할 때 플랫폼에 따라 다르기 때문에 발생
+git config --global core.autocrlf true
