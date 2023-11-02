@@ -20,4 +20,7 @@
   <img src="./results/extrinsic.png" width="190" height="110"/>
 </p>
 
-#### 3. Pixel to World using Extrinsic parameters
+#### 4. Pixel to World using Extrinsic parameters
+<p align="center">
+  <img src="./results/out.gif" width="450" height="360"/>
+</p>
