@@ -11,6 +11,9 @@
 </p>
 
 #### 2. Camera Calibaration using intrinsic parameters
+<p align="center">
+  <img src="./results/result1.jpg" width="600" height="150"/>
+</p>
 
 #### 3. Find Extrinsic parameters
 <p align="center">
