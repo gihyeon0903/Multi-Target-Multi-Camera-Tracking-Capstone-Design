@@ -81,3 +81,25 @@ cv2.waitKey(0)
 cv2.destroyAllWindows()
 ~~~
 chessboard를 제거한 이미지의 경로 설정 / cv2.imshow를 통해 출력된 이미지에 마우스를 움직여가며 (x, y)확인
+
+#### 3. Visualization on cartesian system.ipynb
+~~~
+def make_character(id):
+    text = str(id)
+
+    pos = (2, 24) if len(text) == 2 else (9, 24)
+    obj = np.full((32, 32, 3), (0, 0, 0), dtype=np.uint8)
+
+    cv2.putText(obj, text, pos, cv2.FONT_HERSHEY_SIMPLEX, 0.7, (255, 255, 255), 2)
+    obj = cv2.rotate(obj, cv2.ROTATE_90_COUNTERCLOCKWISE)
+    obj = cv2.flip(obj, 0) 
+    obj_character = pygame.surfarray.make_surface(obj)
+    return obj_character
+~~~
+id를 받아 사람을 대신할 obj 생성
+~~~
+    screen.blit(background, (0, 0))
+    screen.blit(make_character(id), (x_w*gain, y_w*gain)) 
+    pygame.display.update()
+~~~
+pygame의 display상에 (background, obj) draw
