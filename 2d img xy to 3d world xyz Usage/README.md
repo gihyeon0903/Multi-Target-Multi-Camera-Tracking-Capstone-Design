@@ -3,6 +3,7 @@
 ### Dependencies
 - numpy 1.2+
 - opencv-python 4.8+
+- pygame 2.5+
 
 ### Method
 #### 1. Find Intrinsic parameters
