@@ -25,6 +25,11 @@
   <img src="./results/out.gif" width="450" height="360"/>
 </p>
 
+#### ++ Visualization using pygame
+<p align="center">
+  <img src="./results/game.gif" width="900" height="450"/>
+</p>
+
 ### Usage
 #### 1. Find Camera Parameter.ipynb
 ~~~
