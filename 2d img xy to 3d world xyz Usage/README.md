@@ -27,7 +27,7 @@
 
 #### ++ Visualization using pygame
 <p align="center">
-  <img src="./results/game.gif" width="900" height="450"/>
+  <img src="./results/game.gif" width="800" height="400"/>
 </p>
 
 ### Usage
