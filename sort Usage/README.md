@@ -35,5 +35,7 @@ track_bbs_ids = mot_tracker.update(detections)
 2. Sort(mot_tracker)를 이용한 Object Detection
   > track_bbs_ids : [x1, y1, x2, y2, Id]
    
-
-
+### 4. Result
+<p align="center">
+  <img src="./result/tracking_test.gif" width="600"/>
+</p>
