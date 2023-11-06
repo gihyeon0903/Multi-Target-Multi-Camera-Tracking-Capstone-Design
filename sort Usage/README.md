@@ -37,5 +37,5 @@ track_bbs_ids = mot_tracker.update(detections)
    
 ### 4. Result
 <p align="center">
-  <img src="./result/tracking_test.gif" width="600"/>
+  <img src="./tracking_test.gif" width="600"/>
 </p>
