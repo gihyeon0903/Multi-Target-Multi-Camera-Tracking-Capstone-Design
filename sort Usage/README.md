@@ -2,7 +2,7 @@
 
 ### Dependencies
 - Refer to <a href="https://github.com/ultralytics/yolov5">github1</a>
-- Refer to <a href="[https://github.com/ultralytics/yolov5](https://github.com/abewley/sort)">github2</a>
+- Refer to <a href="https://github.com/abewley/sort">github2</a>
 
 ### Code
 
