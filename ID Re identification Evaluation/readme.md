@@ -1,4 +1,4 @@
-# Detection, Tracker, Re-id matching using Answer(.json)
+![image](https://github.com/gihyeon0903/Multi-Target-Multi-Camera-Tracking-Capstone-Design/assets/75930526/2f02fa02-46d7-486e-9d5f-081ef0e45b8f)![image](https://github.com/gihyeon0903/Multi-Target-Multi-Camera-Tracking-Capstone-Design/assets/75930526/2e0564f6-3510-460c-a4c6-5651db7bbe6c)# Detection, Tracker, Re-id matching using Answer(.json)
 - Detection (x1, y1, x2, y2, Conf_score, class)
 - Traker (x1, y1, x2, y2, local_id)
 - Re-id matching (matched, unmatched)
@@ -31,3 +31,4 @@ unmatched = calculate_non_matched(trks1, trks2, matched)
 matched되지 않은 나머지는 unmatched에 넣어줌.
 
 ### Result
+
