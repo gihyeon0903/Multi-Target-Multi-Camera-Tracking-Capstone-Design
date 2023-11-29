@@ -3,6 +3,12 @@
 - Traker (x1, y1, x2, y2, local_id)
 - Re-id matching (matched, unmatched)
 
+### Dataset
+<p align="center">
+  <img src="./result/result2.PNG" width="350"/>
+</p>
+다운로드 링크 : https://www.epfl.ch/labs/cvlab/data/data-pom-index-php/
+
 ### Usage
 #### 1. Detection & Trackers
 ~~~
@@ -33,5 +39,12 @@ matched되지 않은 나머지는 unmatched에 넣어줌.
 ### Result
 
 <p align="center">
-  <img src="./result/result1.PNG" width="600"/>
+  <img src="./result/result1.PNG" width="350"/>
 </p>
+
+- 2번째 프레임에서의 Re-id matching 결과는 아래와 같음<br>
+  - cam1에는 0, 1, 2, 3 총 4개의 객체가 존재하고 cam2에는 0, 1 총 2개의 객체가 존재
+  - cam1과 cam2에서 0과 0은 동일한 객체
+  - cam1에서 1, 2, 3은 cam1에만 존재하는 객체
+  - cam2에서 1은 cam2에만 존재하는 객체
+  - 여기서 [0, 1, 2, 3]과 [0, 1]은 local id의 인덱스를 의미하며 이를 이용하여 local id에 접근할 수 있음.
