@@ -1,4 +1,4 @@
-
+# Detection, Traker, Re-id matching using Answer(json)
 - Detection (x1, y1, x2, y2, Conf_score, class)
 - Traker (x1, y1, x2, y2, local_id)
 - Re-id matching (matched, unmatched)
@@ -33,5 +33,5 @@ matched되지 않은 나머지는 unmatched에 넣어줌.
 ### Result
 
 <p align="center">
-  <img src="./result/result1.jpg" width="600"/>
+  <img src="./result/result1.PNG" width="600"/>
 </p>
