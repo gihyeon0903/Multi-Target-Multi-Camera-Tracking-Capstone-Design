@@ -48,7 +48,7 @@ Additionally, We add k to similarity matrix. It can include IOU information to I
 > Object1 (ID 1 - ID 11), Object2 (ID 2 - ID 12)
 <br>
 
-The equation for k is as follows. <br><br>
+The equation for k is as follows. <br>
 
 <p align="center">
   <img src="./images/equation.png" width="300"/>
@@ -65,7 +65,7 @@ Third, We propose a way to manage global IDs, which consists of a total of three
 <br>
 
 <p align="center">
-  <img src="./images/action.png" width="300"/>
+  <img src="./images/action1.png" width="900"/>
 </p>
 
 --------------
