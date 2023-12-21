@@ -49,8 +49,9 @@ Additionally, We add k to similarity matrix. It can include IOU information to I
 <br>
 
 The equation for k is as follows. <br><br>
+
 <p align="center">
-  $k=\frac{\min(\max\_hits, hits)\cdot0.2}{\max\_{hits}}$
+  <img src="./images/equation.png" width="300"/>
 </p>
 
 #### 3. Integrate Local IDs(cam1, cam2) to Global IDs
@@ -61,15 +62,16 @@ Third, We propose a way to manage global IDs, which consists of a total of three
 > Modify local ID maintaining global ID.
 > 3. Delete
 > Delete existing global ID.
+<br>
 
 <p align="center">
-  <img src="./results/plate detection.jpg" width="300" height="350"/>
+  <img src="./images/action.png" width="300"/>
 </p>
 
 --------------
 ### Result
 
 <p align="center">
-<img src="./results/result.png" width="630" height="350"/>
+  <img src="./images/result.gif" width="300"/>
 </p>
 
