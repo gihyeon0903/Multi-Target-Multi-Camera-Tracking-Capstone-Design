@@ -27,17 +27,35 @@ Fisrt, We perform single camera object tracking using (yolov5+sort) about cam1 a
 
 #### 2. Re-ID
 Second, We extract features using pre-trained weight of OSnet and match same ID to campare features using cosine similarity <br>
-<p align="center">
-  <img src="./results/4 corner detection.png" width="700" height="90"/>
-</p>
+
+|ID 1|ID 2|ID 3|ID 4|
+|---|---|---|---|
+|**ID 11**|0.6|0.7|0|0|
+|**ID 12**|0.7|0.6|0|0|
+
+> cam1 target(ID 1,2,3,4), cam2 target(ID 11,12)
+> Object1 (ID 1 - ID 11), Object2 (ID 2 - ID 12)
+<br>
+
 Additionally, We add k to similarity matrix. It can include IOU information to ID matching. <br>
-<p align="center">
-  <img src="./results/4 corner detection.png" width="700" height="90"/>
-</p>
+
+|ID 1|ID 2|ID 3|ID 4|
+|---|---|---|---|
+|**ID 11**|0.6+k|0.7|0|0|
+|**ID 12**|0.7|0.6+k|0|0|
+
+> cam1 target(ID 1,2,3,4), cam2 target(ID 11,12)
+> Object1 (ID 1 - ID 11), Object2 (ID 2 - ID 12)
+<br>
+
 The equation for k is as follows. <br><br>
 <p align="center">
   $k=\frac{\min(\max\_hits, hits)\cdot0.2}{\max\_{hits}}$
 </p>
+
+#### 3. Integrate Local ID(cam1, cam2) to Global ID
+
+
 
 --------------
 ### Result
