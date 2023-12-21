@@ -53,9 +53,18 @@ The equation for k is as follows. <br><br>
   $k=\frac{\min(\max\_hits, hits)\cdot0.2}{\max\_{hits}}$
 </p>
 
-#### 3. Integrate Local ID(cam1, cam2) to Global ID
+#### 3. Integrate Local IDs(cam1, cam2) to Global IDs
+Third, We propose a way to manage global IDs, which consists of a total of three Action.
+> 1. Generate
+> Generate new global ID.
+> 2. Update
+> Modify local ID maintaining global ID.
+> 3. Delete
+> Delete existing global ID.
 
-
+<p align="center">
+  <img src="./results/plate detection.jpg" width="300" height="350"/>
+</p>
 
 --------------
 ### Result
