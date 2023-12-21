@@ -34,11 +34,14 @@ Additionally, We add k to similarity matrix. It can include IOU information to I
 <p align="center">
   <img src="./results/4 corner detection.png" width="700" height="90"/>
 </p>
-The equation for k is as follows. <br>
-$ \Alpha \rightarrow \Omega $
+The equation for k is as follows. <br><br>
+<p align="center">
+  $k=\frac{\min(\max\_hits, hits)\cdot0.2}{\max\_{hits}}$
+</p>
 
 --------------
 ### Result
+
 <p align="center">
 <img src="./results/result.png" width="630" height="350"/>
 </p>
