@@ -1,38 +1,76 @@
-## Sort Usage
+# Multi-Target-Multi-Camera-Tracking-Capstone-Design
+
+### Project Goal
+- Multi Target Tracking using 2 cameras
+--------------
 
 ### Dependencies
-- Refer to <a href="https://github.com/ultralytics/yolov5">github</a>
-
-### Code
-
-#### 1. Sort
+- numpy 1.2+
+- opencv-python 4.8+
+- pytorch 2.0+
+--------------
 ~~~
-from sort import *
-mot_tracker = Sort(max_age, min_hits, iou_threshold)
+import os
+
+os.makedirs(data/model_weights)
+cd data/model_weights
 ~~~
-> max_age  : Maximum number of frames to keep alive a track without associated detections.<br>
-> min_hits : Minimum number of associated detections before track is initialised.<br>
-> iou_threshold : Minimun IOU for match
+<a href="https://drive.google.com/drive/folders/1mbzC1hsGuE-jEdX0ImvXI4tSeNb3Il36?usp=drive_link">download model weights</a>
   
-#### 2. yolov5s 
-~~~
-import torch
+### Method
+#### 1. Single Camera Object Tacking
+Fisrt, We perform single camera object tracking using (yolov5+sort) about cam1 and cam2. <br>
+<p align="center">
+  <img src="./results/plate detection.jpg" width="300" height="350"/>
+  <img src="./results/plate detection.jpg" width="300" height="350"/>
+</p>
 
-model = torch.hub.load('ultralytics/yolov5', 'yolov5s', pretrained=True);
-model.float()
-model.eval();
-~~~
+#### 2. Re-ID
+Second, We extract features using pre-trained weight of OSnet and match same ID to campare features using cosine similarity <br>
 
-#### 3. tracking
-~~~
-preds = model(image_show)
-detections = preds.pred[0].to('cpu').numpy()
-track_bbs_ids = mot_tracker.update(detections)
-~~~
-1. yolov5를 이용한 Object Detection
-  > detections    : [x1, y1, x2, y2, confidence, class]
-2. Sort(mot_tracker)를 이용한 Object Detection
-  > track_bbs_ids : [x1, y1, x2, y2, Id]
-   
+|ID 1|ID 2|ID 3|ID 4|
+|---|---|---|---|
+|**ID 11**|0.6|0.7|0|0|
+|**ID 12**|0.7|0.6|0|0|
 
+> cam1 target(ID 1,2,3,4), cam2 target(ID 11,12)
+> Object1 (ID 1 - ID 11), Object2 (ID 2 - ID 12)
+<br>
 
+Additionally, We add k to similarity matrix. It can include IOU information to ID matching. <br>
+
+|ID 1|ID 2|ID 3|ID 4|
+|---|---|---|---|
+|**ID 11**|0.6+k|0.7|0|0|
+|**ID 12**|0.7|0.6+k|0|0|
+
+> cam1 target(ID 1,2,3,4), cam2 target(ID 11,12)
+> Object1 (ID 1 - ID 11), Object2 (ID 2 - ID 12)
+<br>
+
+The equation for k is as follows. <br>
+
+<p align="center">
+  <img src="./images/equation.png" width="300"/>
+</p>
+
+#### 3. Integrate Local IDs(cam1, cam2) to Global IDs
+Third, We propose a way to manage global IDs, which consists of a total of three Action.
+> 1. Generate
+> Generate new global ID.
+> 2. Update
+> Modify local ID maintaining global ID.
+> 3. Delete
+> Delete existing global ID.
+<br>
+
+<p align="center">
+  <img src="./images/action1.png" width="900"/>
+</p>
+
+--------------
+### Result
+
+<p align="center">
+  <img src="./images/result.gif" width="300"/>
+</p>
