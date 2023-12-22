@@ -10,12 +10,14 @@
 - pytorch 2.0+
 --------------
 ~~~
-import os
+cd osnet/
+cp osnet_x1_0.onnx osnet/osnet_x1_0.onnx
 
-os.makedirs(data/model_weights)
-cd data/model_weights
+cd feature_extractor_weights/
+cp osnet_ain_ms_m_c.pth.tar feature_extractor_weights/osnet_ain_ms_m_c.pth.tar
+
 ~~~
-<a href="https://drive.google.com/drive/folders/1mbzC1hsGuE-jEdX0ImvXI4tSeNb3Il36?usp=drive_link">download model weights</a>
+<a href="https://drive.google.com/drive/folders/1XhUQNov126Qfns1RgYb5HE8F6wzxX-wu?usp=drive_link"</a>
   
 ### Method
 #### 1. Single Camera Object Tacking
@@ -29,7 +31,7 @@ Fisrt, We perform single camera object tracking using (yolov5+sort) about cam1 a
 Second, We extract features using pre-trained weight of OSnet and match same ID to campare features using cosine similarity <br>
 
 |ID 1|ID 2|ID 3|ID 4|
-|---|---|---|---|
+|---|:---:|:---:|:---:|
 |**ID 11**|0.6|0.7|0|0|
 |**ID 12**|0.7|0.6|0|0|
 
@@ -40,7 +42,7 @@ Second, We extract features using pre-trained weight of OSnet and match same ID 
 Additionally, We add k to similarity matrix. It can include IOU information to ID matching. <br>
 
 |ID 1|ID 2|ID 3|ID 4|
-|---|---|---|---|
+|---|:---:|:---:|:---:|
 |**ID 11**|0.6+k|0.7|0|0|
 |**ID 12**|0.7|0.6+k|0|0|
 
