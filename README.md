@@ -58,11 +58,11 @@ The equation for k is as follows. <br>
 
 #### 3. Integrate Local IDs(cam1, cam2) to Global IDs
 Third, We propose a way to manage global IDs, which consists of a total of three Action.
-> 1. Generate<br>
+> 1. Generate <br>
 > Generate new global ID.
-> 2. Update<br>
+> 2. Update <br>
 > Modify local ID maintaining global ID.
-> 3. Delete<br>
+> 3. Delete <br>
 > Delete existing global ID.
 <br>
 
